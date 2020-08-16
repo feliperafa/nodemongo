@@ -4,4 +4,9 @@ module.exports = function (app) {
     app.route('/usuarios')
     .get(usuarios.listAll)
     .post(usuarios.creatOne)
+
+    app.route('/usuarios/:id')
+    .get(usuarios.showOne)
+    .put(usuarios.updateUser)
+    .delete(usuarios.removerUser)
 }

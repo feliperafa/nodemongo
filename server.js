@@ -1,6 +1,16 @@
 const express = require('express')
 const bodyParser = require('body-Parser')
+const mongoose = require('mongoose')
+const Usuario = require('./src/models/usuarioModel')
+
 const app = express()
+
+//Conexão com o banco mongoDB
+mongoose.Promise = global.Promise
+mongoose.connect('mongodb://localhost/backendDB', { 
+    useNewUrlParser: true,
+     useUnifiedTopology: true 
+ })
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
